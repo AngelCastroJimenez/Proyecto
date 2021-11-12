@@ -1,0 +1,27 @@
+<body *ngIf="isActive">
+  <section>
+    <div class="divContenedor">
+
+      <img src="../assets/imagenes/Logo 1.png">
+      <br>
+      <input id="Usuario" type="text" placeholder="Usuario" name="Usuario">
+      <br>
+      <br>
+      <input id="Contraseña" type="password" placeholder="Contraseña" name="Contraseña">
+
+      <br>
+      <br>
+      <div class="divOlvideContraseña">
+        <a href="#">OLVIDÉ MI CONTRASEÑA</a>
+      </div>
+      <br>
+      <br>
+      <button class="botonRegistrar">REGISTRARME</button>
+      
+      <button class="nav-link" routerLink="index"  [ngClass] = "{ 'is-active' : isActive }" (click)="toggle()">INGRESAR</button>
+
+    </div>
+
+  </section>
+</body>
+<router-outlet *ngIf="!isActive"></router-outlet>

@@ -1,0 +1,127 @@
+<body>
+    <div class="Menu">
+        <div class="divIMG"><img src="../assets/imagenes/Logo 2.png"></div>
+        <input style="width: 85%; height: 50px;  border-radius: 10px;" type="text" placeholder="Buscar" name="Buscar">
+        <button style="height: 50px;" mat-button>B</button>
+        <hr>
+        <br>
+        <button class="botonMenu" mat-button>Inicio</button>
+        <br>
+        <button class="botonMenu" mat-button>Pedido</button>
+        <br>
+        <button class="botonMenu" mat-button>Productos</button>
+        <hr>
+        <br>
+        <button class="botonMenu" mat-button>efemenias</button>
+        <br>
+        <button class="botonMenu" mat-button>Ayuda</button>
+        <hr>
+        <br>
+        <button class="botonMenu" mat-button>Cerrar sesion</button>
+    </div>
+
+    <div class="div1" mat-grid-list style="float: right;" cdkDropListGroup>
+        <button class="boton" (click)="disableDIV = !disableDIV">AGREGAR PEDIDO</button>
+
+        <div class="window-notice" id="window-notice" *ngIf="disableDIV">
+            <div class="content">
+                <div class="content-text">
+                    <div class="content-buttons">
+                        <button class="boton" (click)="disableDIV = !disableDIV">Cerrar</button>
+                        <div class="divContenedorCajaProductos">
+                            <div cdkDropList #COLAList="cdkDropList" [cdkDropListData]="COLA"
+                                [cdkDropListConnectedTo]="[ENPREPARACIONList]" (cdkDropListDropped)="drop($event)">
+                                <div class="divCajaProductos" *ngFor="let item of COLA" cdkDrag>
+                                    <img class="imgProductos" src="../assets/imagenes/Productos/image 1-1.png">
+                                    <br>
+                                    <hr>
+                                    <br>
+                                    {{item}}
+                                    <br>
+                                    {{item}}
+                                    <br>
+                                    {{item}} - {{item}} - {{item}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <LAbel>
+            <h1>COLA</h1>
+        </LAbel>
+        <br>
+        <div class="divCOLA divContenedorCaja">
+            <div cdkDropList #COLAList="cdkDropList" [cdkDropListData]="COLA"
+                [cdkDropListConnectedTo]="[ENPREPARACIONList]" (cdkDropListDropped)="drop($event)">
+                <div class="divCaja" *ngFor="let item of COLA" cdkDrag>
+                    {{item}} - {{item}}
+                    <hr>
+                    {{item}} - {{item}} - {{item}}
+                    <br>
+                    {{item}} - {{item}} - {{item}}
+                </div>
+            </div>
+        </div>
+        <br>
+        <LAbel>
+            <h1>EN PREPARACIÓN</h1>
+        </LAbel>
+        <br>
+        <div class="divPREPARACIÓN divContenedorCaja">
+            <div cdkDropList #ENPREPARACIONList="cdkDropList" [cdkDropListData]="ENPREPARACION"
+                [cdkDropListConnectedTo]="[COLAList]" (cdkDropListDropped)="drop($event)">
+                <div class="divCaja" *ngFor="let item of ENPREPARACION" cdkDrag>
+                    {{item}} - {{item}}
+                    <hr>
+                    {{item}} - {{item}} - {{item}}
+                    <br>
+                    {{item}} - {{item}} - {{item}}
+                </div>
+            </div>
+        </div>
+        <br>
+        <LAbel>
+            <h1>FINALIZADO</h1>
+        </LAbel>
+        <br>
+        <div class="divFINALIZADO divContenedorCaja">
+            <div class="divCOLA">
+                <div cdkDropList #FINALIZADOList="cdkDropList" [cdkDropListData]="FINALIZADO"
+                    [cdkDropListConnectedTo]="[ENPREPARACIONList]" (cdkDropListDropped)="drop($event)">
+                    <div class="divCaja" *ngFor="let item of FINALIZADO" cdkDrag>
+                        {{item}} - {{item}}
+                        <hr>
+                        {{item}} - {{item}} - {{item}}
+                        <br>
+                        {{item}} - {{item}} - {{item}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <LAbel>
+            <h1>ENTREGADO</h1>
+        </LAbel>
+        <br>
+        <div class="divENTREGADO divContenedorCaja">
+            <div class="divCOLA">
+                <div cdkDropList #ENTREGADOList="cdkDropList" [cdkDropListData]="ENTREGADO"
+                    [cdkDropListConnectedTo]="[FINALIZADOList]" (cdkDropListDropped)="drop($event)">
+                    <div class="divCaja" *ngFor="let item of ENTREGADO" cdkDrag>
+                        {{item}} - {{item}}
+                        <hr>
+                        {{item}} - {{item}} - {{item}}
+                        <br>
+                        {{item}} - {{item}} - {{item}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+<router-outlet></router-outlet>

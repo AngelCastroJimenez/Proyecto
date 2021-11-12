@@ -1,0 +1,50 @@
+body {
+    background-image: url("../assets/imagenes/BG.png");
+    align-content: space-around;
+  }
+hr{
+    color: rgb(5, 5, 5);
+}
+img {
+    
+    width: 300px;
+	height: 150px;
+    margin: 5%;
+}
+.divContenedor{
+    position:relative;
+    left:15%;
+    top:50%;
+}
+input{
+    width: 25%;
+    height: 50px;
+    border-radius: 10px;
+}
+a{
+    color: blanchedalmond;
+    size: 25%;
+}
+.divOlvideContraseña{
+    width: 25%;
+    height: 50px;
+    background-color: rgba(97, 42, 25, 0.589);
+    border-style: none; 
+    border-radius: 30px;
+    align-items: center;
+}
+button{
+    width: 10%; 
+    height: 50px; 
+    border-style: none; 
+    border-radius: 30px;
+    margin: 20px;
+}
+.botonRegistrar{
+    color: brown;
+    background-color: blanchedalmond;
+}
+.botonIngresar{
+    color: blanchedalmond;
+    background-color: brown;
+}
