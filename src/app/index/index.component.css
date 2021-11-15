@@ -1,45 +1,24 @@
-body {
-    background-image: url('/src/assets/imagenes/BG.png');
-    align-content: space-around;
-  }
 hr{
     color: rgb(5, 5, 5);
 }
 img {
-    
-    width: 300px;
-	height: 150px;
-    margin: 5%;
+    width: 250px;
+    height: 100px;
+    margin: 10%;
 }
 
 label{
     color: blanchedalmond;
-    size: 25%;
+    margin-left: 5%;
+    display: inline-block;
 }
 .div1{
-    filter: blur(0px);
-    width: 75%;
-	height: 100%;
-}
-.divCOLA{
-    width: 98%;
-    background-color: rgba(224, 227, 231, 0.616);
-    float: right;
-}
-.divPREPARACIÓN{
-    width: 98%;
-    background-color: rgba(224, 227, 231, 0.616);
-    float: right;
-}
-.divFINALIZADO{
-    width: 98%;
-    background-color: rgba(224, 227, 231, 0.616);
-    float: right;
-}
-.divENTREGADO{
-    width: 98%;
-    background-color: rgba(224, 227, 231, 0.616);
-    float: right;
+    /*filter: blur(0px);*/
+    width: 70%;
+    height: 100%;
+    display: grid;
+    justify-items: stretch;
+    align-content: center;
 }
 .Menu{
     background-color: rgba(177, 177, 177, 0.747);
@@ -68,12 +47,19 @@ label{
     margin: 10px;
 }
 .divContenedorCaja{
-    height: auto;
+    width: 98%;
+    background-color: rgba(224, 227, 231, 0.616);
+    float: right;
+    height: 130px;
     position: static;
-    border-style: none; 
-    border-radius: 30px; 
-    align-items: center;
-    justify-content: center;
+    border-style: none;
+    border-radius: 30px;
+    align-items: stretch;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
 }
 .divCaja {
     width: 200px;
@@ -137,11 +123,19 @@ label{
                 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
   .window-notice {
-    background: rgba(224, 227, 231, 0.616);
+    /*background: rgba(224, 227, 231, 0.616);
     width: 100%;
     left: 0;
     bottom: 0;
     right:0;
+    top: 0;
+    display: flex;
+    position: fixed;
+    z-index: 999;*/
+    background: rgba(224, 227, 231, 0.616);
+    width: 150%;
+    height: 100%;
+    left: 0%;
     top: 0;
     display: flex;
     position: fixed;
@@ -164,4 +158,35 @@ label{
     height: 90%;
     padding: 2rem;
     font-size: 1.3rem;
+}
+/*TAMAÑO DE LA PANTALLA*/
+@media all and (max-width: 600px){
+    .divContenedor{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    img {
+        width: 200px;
+        height: 100px;
+    }
+    input{
+        width: 200px;
+        margin: 5%;
+    }
+    .divOlvideContraseña{
+        width: 200px;
+        height: 50px;
+        margin: 1%;
+    }
+    .divBotones{
+        display: contents;
+    }
+    button{
+        width: 200px; 
+        height: 50px;
+        margin: 1%;
+    }
 }
