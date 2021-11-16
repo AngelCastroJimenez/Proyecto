@@ -13,6 +13,7 @@ export class IndexComponent implements OnInit {
   }
 
   disableDIV = false;
+  is_open=  false;
   COLA = ['1', '2'];
   ENPREPARACION = ['Get up', 'Brush ',];
   FINALIZADO = ['Get', 'Pick'];
@@ -30,6 +31,4 @@ export class IndexComponent implements OnInit {
       );
     }
   }
-  
-
 }

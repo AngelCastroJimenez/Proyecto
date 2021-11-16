@@ -20,24 +20,6 @@ label{
     justify-items: stretch;
     align-content: center;
 }
-.Menu{
-    background-color: rgba(177, 177, 177, 0.747);
-    float: left;
-    align-content: center;
-    align-items: center;
-    text-align: left;
-    justify-content: center;
-	width: 25%;
-	height: 100%;
-}
-.botonMenu{
-    border-style: none; 
-    background-color: rgba(177, 177, 177, 0.747);
-    width: 100%; 
-    height: 50px;
-    text-align: left;
-    display: table-cell;
-}
 .boton{
     width: 300px; 
     height: 70px; 
@@ -123,15 +105,6 @@ label{
                 0 1px 5px 0 rgba(0, 0, 0, 0.12);
   }
   .window-notice {
-    /*background: rgba(224, 227, 231, 0.616);
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    right:0;
-    top: 0;
-    display: flex;
-    position: fixed;
-    z-index: 999;*/
     background: rgba(224, 227, 231, 0.616);
     width: 150%;
     height: 100%;
@@ -159,7 +132,32 @@ label{
     padding: 2rem;
     font-size: 1.3rem;
 }
-/*TAMAÑO DE LA PANTALLA*/
+.Menu{
+    float: left;
+    align-content: center;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+	width: 25%;
+	height: 100%;
+}
+.navigation{
+    float: left;
+    z-index: 2;
+    display: block;
+    max-height: inherit;
+    position: relative;
+    right: inherit; /*anulamos su posición fuera de la pantalla*/
+    width: 25%;
+	height: 100%;
+    background-color: rgba(177, 177, 177, 0.747);
+}
+.navigation li{
+    display: block;
+}
+.navigation-toggle{
+    display: none;
+}
 @media all and (max-width: 600px){
     .divContenedor{
         display: flex;
@@ -188,5 +186,27 @@ label{
         width: 200px; 
         height: 50px;
         margin: 1%;
+    }
+    .navigation{
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+        display: block;
+        height: 100%;
+        background-color: rgba(177, 177, 177, 0.747);
+    }
+    .navigation li{
+        display: block;
+    }
+    .navigation-toggle {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 10px;
+    }
+    .navigation-toggle{
+        width: 0;
+        height: 0;
+        display:contents;
     }
 }

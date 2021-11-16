@@ -1,25 +1,35 @@
-<section>
-    <div class="Menu">
-        <div class="divIMG"><img src="../assets/imagenes/Logo 2.png"></div>
-        <input style="width: 85%; height: 50px;  border-radius: 10px;" type="text" placeholder="Buscar" name="Buscar">
-        <button style="height: 50px;" mat-button>B</button>
-        <hr>
-        <br>
-        <button class="botonMenu" mat-button>Inicio</button>
-        <br>
-        <button class="botonMenu" mat-button>Pedido</button>
-        <br>
-        <button class="botonMenu" mat-button>Productos</button>
-        <hr>
-        <br>
-        <button class="botonMenu" mat-button>efemenias</button>
-        <br>
-        <button class="botonMenu" mat-button>Ayuda</button>
-        <hr>
-        <br>
-        <button class="botonMenu" mat-button>Cerrar sesion</button>
-    </div>
+<a class="navigation-toggle" id="nav-open" (click)="is_open = !is_open">Menu</a>
 
+<nav class="navigation" id="main-navigation" *ngIf="!is_open">
+    <div>
+        <ul>
+            <li>
+                <input style="width: 85%; height: 50px;  border-radius: 10px;" type="text" placeholder="Buscar"
+                    name="Buscar">
+            </li>
+            <li>
+                <a href="">Inicio</a>
+            </li>
+            <li>
+                <a href="">Pedido</a>
+            </li>
+            <li>
+                <a href="">Productos</a>
+            </li>
+            <li>
+                <a href="">efemenias</a>
+            </li>
+            <li>
+                <a href="">Ayuda</a>
+            </li>
+            <li>
+                <a href="">Cerrar sesion</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section>
     <div class="div1" mat-grid-list style="float: right;" cdkDropListGroup>
         <button class="boton" (click)="disableDIV = !disableDIV">AGREGAR PEDIDO</button>
 
